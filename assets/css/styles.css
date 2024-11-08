@@ -54,6 +54,7 @@ a {
 }
 
 /* ======= HEADER ======= */
+
 .header {
     background: #fbfaff;
 }
@@ -64,6 +65,7 @@ a {
     z-index: 3;
 }
 
+.footer-bottom,
 .header-top {
     width: 1330px;
     max-width: calc(100% - 60px);
@@ -71,6 +73,7 @@ a {
     margin-right: auto;
 }
 
+.footer__inner,
 .header__inner {
     display: flex;
     align-items: center;
@@ -78,12 +81,15 @@ a {
     padding: 36px 0 8px;
 }
 
+.footer__email,
 .header__email {
+    width: 28%;
     display: flex;
     align-items: center;
     column-gap: 10px;
 }
 
+.footer__dots,
 .header__dots {
     display: inline-block;
     width: 46px;
@@ -95,6 +101,7 @@ a {
     text-align: center;
 }
 
+.footer__link,
 .header__link {
     color: #080415;
     font-size: 2.2rem;
@@ -103,12 +110,14 @@ a {
     text-decoration: underline;
 }
 
-.navbar__list {
+.navbar__list,
+.navbarf__list {
     display: flex;
     column-gap: 43px;
 }
 
-.navbar-item__link {
+.navbar-item__link,
+.navbarf-item__link {
     color: #51586a;
     font-size: 1.7rem;
     font-weight: 400;
@@ -260,6 +269,16 @@ a {
     font-weight: 500;
     line-height: 1.19; /* 119.048% */
     letter-spacing: -1.68px;
+    position: relative;
+}
+
+.trust__heading::before {
+    position: absolute;
+    content: "";
+    width: 86px;
+    border: 2px solid #5d3bee;
+    left: -100px;
+    top: 24px;
 }
 
 .trust__social {
@@ -431,4 +450,607 @@ a {
     height: 187px;
     flex-shrink: 0;
     object-fit: cover;
+}
+
+.work__btn {
+    margin-top: 80px;
+    color: #080415;
+    background: #fff;
+}
+
+.work__cta .row {
+    text-align: center;
+}
+
+/* ======== ABOUT ======== */
+
+.about {
+    margin-top: 140px;
+    padding-bottom: 74px;
+    background: linear-gradient(to bottom, #fff 50%, #fbfaff 50%);
+    /* Đảm bảo phần tử có kích thước */
+    width: 100%;
+    height: 100vh; /* Chiều cao toàn màn hình, tùy chọn */
+}
+
+.about__content {
+    text-align: center;
+}
+
+.about__label {
+    color: #5d3bee;
+    font-size: 3.2rem;
+    font-weight: 500;
+    line-height: 1.25; /* 125% */
+    letter-spacing: -1.28px;
+}
+
+.about__heading {
+    margin-top: 10px;
+    color: #080415;
+    font-size: 5.6rem;
+    font-weight: 500;
+    line-height: 1.18; /* 117.857% */
+    letter-spacing: -2.24px;
+}
+
+.about__desc {
+    margin-top: 15px;
+    max-width: 570px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #51586a;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 1.67; /* 166.667% */
+}
+
+.about__center {
+    margin-top: 90px;
+    position: relative;
+}
+
+.about__center::before,
+.about__center::after {
+    position: absolute;
+    content: "";
+    width: 80%;
+    left: 100px;
+}
+
+.about__center::before {
+    top: -20px;
+    border: 1px solid #ccc;
+}
+
+.about__center::after {
+    bottom: -20px;
+    border: 1px solid #ccc;
+}
+
+.about__title {
+    color: #080415;
+    font-size: 5.6rem;
+    font-weight: 500;
+    line-height: 1.36; /* 135.714% */
+    letter-spacing: 1.68px;
+    text-decoration: underline;
+}
+
+.about__descc {
+    color: #51586a;
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.67; /* 166.667% */
+}
+
+.about__bottom {
+    margin-top: 70px;
+    position: relative;
+}
+
+.about__video {
+    width: 100%;
+}
+
+.about__bottom::after {
+    content: "Intro Video";
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 170px;
+    height: 62px;
+    text-align: center;
+    flex-shrink: 0;
+    background: #fff;
+    color: #51586a;
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1.67; /* 166.667% */
+    text-transform: uppercase;
+}
+
+.about__bottom::after {
+    line-height: 62px;
+}
+
+/* ========== COMMENT ======== */
+.comment {
+    padding: 76px 0 74px;
+    background: #fbfaff;
+}
+
+.comment__cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.comment__heading {
+    color: #080415;
+    font-size: 5.6rem;
+    font-weight: 500;
+    line-height: 1.18; /* 117.857% */
+    letter-spacing: -2.24px;
+}
+
+.comment__desc {
+    width: 570px;
+    margin-top: 20px;
+    color: #51586a;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 30px; /* 166.667% */
+}
+
+.comment__note {
+    margin-top: 60px;
+    width: 679px;
+    height: 114px;
+    color: #51586a;
+    text-align: center;
+    font-size: 2.4rem;
+    font-weight: 400;
+    line-height: 1.67; /* 166.667% */
+}
+
+.comment__info {
+    margin-top: 36px;
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+}
+
+.comment__images {
+    display: inline-block;
+    position: relative;
+    width: 39.833px;
+    height: 39.833px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #f29764;
+}
+
+.comment__avatar {
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: 1;
+    border-radius: inherit;
+}
+
+.comment__name {
+    color: #080415;
+    font-size: 3rem;
+    font-weight: 500;
+    line-height: 1.33; /* 133.333% */
+}
+
+.comment__inform {
+    color: #51586a;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.82; /* 181.25% */
+}
+
+.comment__group {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 10px;
+}
+
+.comment__dot {
+    width: 10px;
+    height: 10px;
+    flex-shrink: 0;
+    background: #cbc9d0;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    margin-right: 8px; /* Khoảng trắng giữa các hình tròn */
+    transition: background 0.3s ease, transform 0.3s ease; /* Hiệu ứng chuyển động */
+}
+
+.comment__dot::after {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    top: -4px;
+    left: -4px;
+    border: 1px solid #5d3bee;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Hiệu ứng chuyển động cho vòng ngoài */
+}
+
+.comment__dot:hover {
+    background: #5d3bee; /* Màu nền tím khi hover */
+    transform: scale(1.2); /* Phóng to hình tròn khi hover */
+}
+
+.comment__dot:hover::after {
+    opacity: 1;
+    transform: scale(1.3); /* Phóng to vòng ngoài khi hover */
+}
+
+.comment__rect {
+    position: relative;
+}
+
+.comment__icon {
+    position: absolute;
+}
+
+.comment__icon:nth-child(1) {
+    bottom: 40px;
+    left: -210px;
+}
+
+.comment__icon:nth-child(2) {
+    bottom: -73px;
+    left: -306px;
+}
+
+.comment__icon:nth-child(3) {
+    bottom: -73px;
+    left: -325px;
+}
+
+.comment__icon:nth-child(4) {
+    bottom: -72px;
+    left: -172px;
+}
+
+.comment__icon:nth-child(5) {
+    bottom: 40px;
+    right: -130px;
+}
+
+.comment__icon:nth-child(6) {
+    bottom: -73px;
+    right: -90px;
+}
+
+.comment__icon:nth-child(7) {
+    bottom: -73px;
+    right: -205px;
+}
+
+.comment__icon:nth-child(8) {
+    bottom: -72px;
+    right: -225px;
+}
+
+/* ====== FAG ============ */
+.fag {
+    margin-top: 95px;
+}
+
+.fag__heading {
+    color: #080415;
+    font-size: 5.6rem;
+    font-weight: 500;
+    line-height: 1.18; /* 117.857% */
+    letter-spacing: -2.24px;
+}
+
+.fag-item__text {
+    color: #080415;
+    font-size: 3.2rem;
+    line-height: 1.25; /* 125% */
+    letter-spacing: -1.28px;
+}
+
+.fag-item__desc {
+    margin-top: 23px;
+    max-width: 487px;
+    color: #51586a;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 1.67; /* 166.667% */
+}
+
+.fag__list {
+    margin-top: 80px;
+}
+
+.fag-item {
+    position: relative;
+    width: 80%;
+}
+
+.fag-item__label {
+    display: flex;
+    cursor: pointer;
+}
+
+.fag-item__answer::after {
+    display: block;
+    content: "";
+    width: 100%;
+    flex-shrink: 0;
+    margin: 33px 0 60px;
+    border: 2px solid #08182f;
+    transition: border-color 0.5s ease; /* Thêm transition cho border */
+}
+
+.fag-item__input {
+    transition: transform 0.5s ease;
+}
+
+.fag-item__icon::after {
+    content: url(/assets/icon/fag-icon-question.svg);
+    position: absolute;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    transition: border-color 0.5s ease; /* Thêm transition cho border của icon */
+}
+
+/* + chọn phần tử liền kề */
+.fag-item__input:checked + .fag-item__label .fag-item__icon::after {
+    content: url(/assets/icon/fag-icon-answer.svg);
+    line-height: 40px;
+    border: 1px solid #e2c2e2;
+}
+
+/* ẩn câu trả lời  */
+.fag-item__answer > .fag-item__desc {
+    display: none;
+    transition: max-height 0.5s ease, opacity 0.5s ease; /* Thêm transition cho display */
+}
+/* hiện câu trả lời */
+.fag-item__input:checked
+    + .fag-item__label
+    + .fag-item__answer
+    > .fag-item__desc {
+    display: block;
+}
+
+.fag-item__input:checked + .fag-item__label .fag-item__text {
+    color: #5d3bee;
+}
+
+.fag-item__input:checked + .fag-item__label + .fag-item__answer::after {
+    border: 2px solid #5d3bee;
+}
+
+/* ======= gallery ========= */
+.gallery {
+    margin-top: 160px;
+}
+
+.gallery__top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery__heading,
+.cta__heading {
+    color: #080415;
+    font-size: 5.6rem;
+    font-weight: 500;
+    line-height: 1.18; /* 117.857% */
+    letter-spacing: -2.24px;
+}
+
+.gallery__desc,
+.cta__desc {
+    width: 528px;
+    margin-top: 20px;
+    color: #51586a;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 1.67; /* 166.667% */
+    text-align: center;
+}
+
+.gallery__link {
+    display: inline-block;
+    margin-top: 30px;
+    color: #5d3bee;
+    font-size: 3.2rem;
+    font-weight: 500;
+    line-height: 1.25; /* 125% */
+    letter-spacing: -1.28px;
+    text-decoration: underline;
+}
+
+.gallery-item {
+    margin-top: 70px;
+    max-width: 370px;
+}
+
+.gallery-item__img {
+    width: 100%;
+    height: 529px;
+    flex-shrink: 0;
+    object-fit: cover;
+}
+
+/* ======= CTA ========= */
+.cta {
+    margin-top: 140px;
+}
+
+.cta .container {
+    max-width: 1330px;
+    height: 488px;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden; /* Giới hạn nội dung bên trong */
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.cta__inner {
+    padding: 60px 0 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #fbfaff;
+}
+
+.cta__heading {
+    margin-top: 20px;
+}
+
+.cta__btn {
+    margin-top: 20px;
+}
+
+.cta__heading,
+.cta__desc,
+.cta__btn,
+.cta__icon {
+    position: relative; /* Để áp dụng z-index */
+    z-index: 1; /* Đảm bảo các phần tử này nằm trên .cta__rect */
+}
+
+.cta__rect {
+    position: absolute;
+}
+
+.cta__rect:nth-child(1) {
+    top: -95px;
+    left: 55%;
+    transform: translateX(-50%);
+}
+
+.cta__rect:nth-child(2) {
+    top: 40%;
+    left: 43%;
+    transform: translate(-50%, -50%);
+}
+
+.cta__rect:nth-child(3) {
+    top: 30%;
+    left: 54%;
+    transform: translate(-50%, -50%);
+}
+
+.cta__rect:nth-child(4) {
+    top: 50%;
+    left: 62%;
+    transform: translate(-50%, -50%);
+}
+
+.cta__rect:nth-child(5) {
+    bottom: 130px;
+    left: 52px;
+}
+
+.cta__rect:nth-child(6) {
+    bottom: 22px;
+    left: -42px;
+}
+
+.cta__rect:nth-child(7) {
+    left: -80px;
+    bottom: 0;
+}
+
+.cta__rect:nth-child(8) {
+    bottom: 0;
+    left: 70px;
+}
+
+.cta__rect:nth-child(9) {
+    right: 50px;
+    top: -5px;
+}
+
+.cta__rect:nth-child(10) {
+    top: 0;
+    right: 0;
+}
+
+.cta__rect:nth-child(11) {
+    top: 35px;
+    right: 0;
+}
+
+/* ======== COPYRIGHT ======== */
+
+.copyright {
+    width: 100%;
+    border: 1px solid #cecdd2;
+
+    padding: 32px 0 18px;
+}
+
+.copy__inner {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.copy__desc {
+    color: #525771;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 1.67; /* 166.667% */
+    opacity: 0.6;
+}
+
+.copy__policy,
+.copy__term {
+    color: #525771;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 1.67; /* 166.667% */
+    letter-spacing: -0.54px;
+    opacity: 0.6;
+}
+
+.copy__info {
+    display: flex;
+    column-gap: 36px;
+    position: relative;
+}
+
+.copy__info::after {
+    content: "";
+    position: absolute;
+    height: 14px;
+    border-left: 1px solid #525771; /* Tạo đường dọc với border-left */
+    top: 10px;
+    left: 43%; /* Căn giữa đường thẳng nếu cần */
+    transform: translateX(-50%);
 }

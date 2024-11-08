@@ -21,9 +21,25 @@
         <title>MeMoji Boys</title>
     </head>
     <body>
+        <!-- PC HEADER -->
         <!-- START HEADER -->
         <header class="header fixed">
             <div class="header-top">
+                <!-- ==== TABLET/MOBILE === -->
+                <label for="menu-checkbox" class="toggle-menu">
+                    <div class="toggle-menu__box">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 448 512"
+                        >
+                            <path
+                                fill="#5D3BEE"
+                                d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"
+                            />
+                        </svg>
+                    </div>
+                </label>
+                <!-- ==== END TABLET/MOBILE === -->
                 <!-- email -->
                 <div class="header__inner">
                     <div class="header__email">
@@ -51,7 +67,7 @@
 
                     <!-- NAV  -->
                     <nav class="navbar">
-                        <section class="navbar__list">
+                        <section class="navbar__list" id="pc-nav">
                             <!-- navbar-item-1 -->
                             <div class="navbar-item">
                                 <a href="#projects" class="navbar-item__link"
@@ -76,6 +92,18 @@
                                     >Contact</a
                                 >
                             </div>
+                            <!-- navbar-item-4 -->
+                            <div class="show-on-mobile separate">
+                                <a href="#" class="navbar-item__link"
+                                    >Sign In</a
+                                >
+                            </div>
+                            <!-- navbar-item-4 -->
+                            <div class="show-on-mobile">
+                                <a href="#" class="navbar-item__link"
+                                    >Sign Up</a
+                                >
+                            </div>
                         </section>
                     </nav>
                 </div>
@@ -83,15 +111,62 @@
         </header>
         <!-- END HEADER -->
 
+        <!-- ===== TABLET/MOBILE HEADER -->
+        <header class="mobile-header">
+            <input
+                type="checkbox"
+                name=""
+                id="menu-checkbox"
+                class="menu-checkbox"
+                hidden
+            />
+            <!-- overlay -->
+            <label for="menu-checkbox" class="menu-overlay"></label>
+            <!-- menu-content -->
+            <div class="menu-drawer">
+                <!-- close -->
+                <label for="menu-checkbox">
+                    <svg
+                        class="menu-drawer__close"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512"
+                    >
+                        <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <path
+                            d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"
+                        />
+                    </svg>
+                </label>
+                <!-- logo -->
+                <a href="#!">
+                    <img src="./assets/icon/avatar.svg" alt="" />
+                </a>
+
+                <!-- NAV  -->
+                <nav class="navbar">
+                    <section class="navbar__list" id="mobile-nav"></section>
+                    <!-- ===== JS ======= -->
+                    <script>
+                        const pcNav = document.querySelector("#pc-nav");
+                        const mobileNav = document.querySelector("#mobile-nav");
+                        // COpy from PC nav -> Mobile nav
+                        mobileNav.innerHTML = pcNav.innerHTML;
+                    </script>
+                    <!-- ===== JS ======= -->
+                </nav>
+            </div>
+        </header>
+        <!-- ===== END TABLET/MOBILE HEADER -->
+
         <!-- START MAIN -->
-        <main style="height: 100000px">
+        <main>
             <!-- === HERO ==== -->
             <section class="hero">
                 <div class="container">
                     <div class="hero__inner">
                         <div class="row">
                             <!-- HERO media -->
-                            <div class="col-lg-5">
+                            <div class="col-lg-5 col-md-10">
                                 <div class="hero__media">
                                     <img
                                         src="./assets/img/hero-img.png"
@@ -208,13 +283,13 @@
                     <div class="trust__inner">
                         <div class="row">
                             <!-- left -->
-                            <div class="col-lg-4 offset-lg-1">
+                            <div class="col-lg-4 offset-lg-1 offset-md-3">
                                 <h2 class="trust__heading">
                                     Meet my recent clients
                                 </h2>
                             </div>
                             <!-- right -->
-                            <div class="col-lg-7">
+                            <div class="col-lg-7 col-md-8 offset-md-3">
                                 <div class="trust__social">
                                     <!-- trust item 1 -->
                                     <div class="trust-item">
@@ -311,7 +386,7 @@
             </section>
 
             <!-- === SERVICE ==== -->
-            <section class="service">
+            <section class="service" style="display: none">
                 <div class="container">
                     <!-- Top -->
                     <div class="row">
@@ -390,7 +465,7 @@
             </section>
 
             <!-- === WORK ==== -->
-            <section class="work">
+            <section class="work" style="display: none">
                 <div class="container">
                     <!-- top  -->
                     <div class="work__top">
@@ -518,8 +593,544 @@
                             </div>
                         </div>
                     </section>
+
+                    <div class="work__cta">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <a href="#!" class="btn work__btn"
+                                    >All Projects</a
+                                >
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
+
+            <!-- === ABOUT ==== -->
+            <section class="about" style="display: none">
+                <div class="container">
+                    <!-- top -->
+                    <div class="about__top">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="about__content">
+                                    <p class="about__label">Hey,,,,It’s Arif</p>
+                                    <h2 class="about__heading">
+                                        Interactive Designer
+                                    </h2>
+                                    <p class="about__desc">
+                                        Lorem ipsum dolor sit amet, consectetur
+                                        adipiscing elit. In urna, non nisl
+                                        tincidunt ut elementum turpis.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- center -->
+                    <div class="about__center">
+                        <div class="row">
+                            <!-- center 1  -->
+                            <div class="col-lg-2 offset-lg-2">
+                                <div class="about__info">
+                                    <h3 class="about__title">08+</h3>
+                                    <p class="about__descc">Years Experience</p>
+                                </div>
+                            </div>
+
+                            <!-- center 2  -->
+                            <div class="col-lg-2 offset-lg-1">
+                                <div class="about__info">
+                                    <h3 class="about__title">21+</h3>
+                                    <p class="about__descc">
+                                        Features & Awards
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- center 3  -->
+                            <div class="col-lg-2 offset-lg-1">
+                                <div class="about__info">
+                                    <h3 class="about__title">97%</h3>
+                                    <p class="about__descc">Clients Rating</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- bottom -->
+                    <div class="about__bottom">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <video
+                                    class="about__video"
+                                    loop
+                                    controls
+                                    src="./assets/video/Heavy Is The Crown ft. Linkin Park (Official Music Video) .mp4"
+                                ></video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- === COMMENT ==== -->
+            <section class="comment" style="display: none">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="comment__cont">
+                                <h2 class="comment__heading">
+                                    What people says
+                                </h2>
+                                <p class="comment__desc">
+                                    Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit. In urna, non nisl tincidunt
+                                    ut elementum turpis.
+                                </p>
+                                <p class="comment__note">
+                                    “Duis aute irure dolor in reprehenderit in
+                                    voluptate velit esse cillum dolore eu fugiat
+                                    nulla pariatur. Excepteur sint occaecat
+                                    cupidatat non proident, sunt in culpa.”
+                                </p>
+
+                                <div class="comment__info">
+                                    <a href="#!" class="comment__images">
+                                        <img
+                                            src="./assets/img/comment-avatar-01.png"
+                                            alt=""
+                                            class="comment__avatar"
+                                        />
+                                    </a>
+                                    <h3>
+                                        <a class="comment__name" href="#!"
+                                            >Joe Elia</a
+                                        >
+                                    </h3>
+                                </div>
+
+                                <p class="comment__inform">
+                                    User Interface Design at PCL Lab
+                                </p>
+                            </div>
+                            <!-- dot -->
+                            <div class="comment__group">
+                                <div class="comment__dot"></div>
+                                <div class="comment__dot"></div>
+                                <div
+                                    class="comment__dot comment__dot-active"
+                                ></div>
+                                <div class="comment__dot"></div>
+                                <div class="comment__dot"></div>
+                            </div>
+                            <!-- icon -->
+                            <div class="comment__rect">
+                                <img
+                                    src="./assets/icon/hero-content-icon-1.svg"
+                                    alt=""
+                                    class="comment__icon"
+                                />
+                                <img
+                                    src="./assets/icon/hero-content-icon-2.svg"
+                                    alt=""
+                                    class="comment__icon"
+                                />
+                                <img
+                                    src="./assets/icon/hero-content-icon-3.svg"
+                                    alt=""
+                                    class="comment__icon"
+                                />
+                                <img
+                                    src="./assets/icon/hero-content-icon-4.svg"
+                                    alt=""
+                                    class="comment__icon"
+                                />
+                                <img
+                                    src="./assets/icon/hero-content-icon-1.svg"
+                                    alt=""
+                                    class="comment__icon"
+                                />
+                                <img
+                                    src="./assets/icon/hero-content-icon-2.svg"
+                                    alt=""
+                                    class="comment__icon"
+                                />
+                                <img
+                                    src="./assets/icon/hero-content-icon-3.svg"
+                                    alt=""
+                                    class="comment__icon"
+                                />
+                                <img
+                                    src="./assets/icon/hero-content-icon-4.svg"
+                                    alt=""
+                                    class="comment__icon"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- === FAG ==== -->
+            <section class="fag" style="display: none">
+                <div class="container">
+                    <div class="fag__top">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <h2 class="fag__heading">
+                                    A few questions clients normally ask me
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- list -->
+                    <section class="fag__list">
+                        <!-- item 1 -->
+                        <section class="fag-item">
+                            <input
+                                type="checkbox"
+                                name="question"
+                                id="fagcheck"
+                                class="fag-item__input"
+                                hidden
+                            />
+                            <label for="fagcheck" class="fag-item__label">
+                                <span class="fag-item__icon"></span>
+                                <spam class="fag-item__text"
+                                    >What is your hourly rate?</spam
+                                >
+                            </label>
+                            <section class="fag-item__answer">
+                                <p class="fag-item__desc">
+                                    Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit. In urna, non nisl tincidunt
+                                    ut elementum turpis.
+                                </p>
+                            </section>
+                        </section>
+
+                        <!-- item 2 -->
+                        <section class="fag-item">
+                            <input
+                                type="checkbox"
+                                name="question"
+                                id="fagcheck2"
+                                class="fag-item__input"
+                                hidden
+                            />
+                            <label for="fagcheck2" class="fag-item__label">
+                                <span class="fag-item__icon"></span>
+                                <spam class="fag-item__text"
+                                    >What type of projects do you take on?</spam
+                                >
+                            </label>
+                            <section class="fag-item__answer">
+                                <p class="fag-item__desc">
+                                    Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit. In urna, non nisl tincidunt
+                                    ut elementum turpis.
+                                </p>
+                            </section>
+                        </section>
+
+                        <!-- item 3 -->
+                        <section class="fag-item">
+                            <input
+                                type="checkbox"
+                                name="question"
+                                id="fagcheck3"
+                                class="fag-item__input"
+                                hidden
+                            />
+                            <label for="fagcheck3" class="fag-item__label">
+                                <span class="fag-item__icon"></span>
+                                <spam class="fag-item__text"
+                                    >How do you charge for projects ?</spam
+                                >
+                            </label>
+                            <section class="fag-item__answer">
+                                <p class="fag-item__desc">
+                                    Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit. In urna, non nisl tincidunt
+                                    ut elementum turpis.
+                                </p>
+                            </section>
+                        </section>
+
+                        <!-- item 4 -->
+                        <section class="fag-item">
+                            <input
+                                type="checkbox"
+                                name="question"
+                                id="fagcheck4"
+                                class="fag-item__input"
+                                hidden
+                            />
+                            <label for="fagcheck4" class="fag-item__label">
+                                <span class="fag-item__icon"></span>
+                                <spam class="fag-item__text"
+                                    >How often can we communicate?</spam
+                                >
+                            </label>
+                            <section class="fag-item__answer">
+                                <p class="fag-item__desc">
+                                    Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit. In urna, non nisl tincidunt
+                                    ut elementum turpis.
+                                </p>
+                            </section>
+                        </section>
+
+                        <!-- item 5 -->
+                        <section class="fag-item">
+                            <input
+                                type="checkbox"
+                                name="question"
+                                id="fagcheck5"
+                                class="fag-item__input"
+                                hidden
+                            />
+                            <label for="fagcheck5" class="fag-item__label">
+                                <span class="fag-item__icon"></span>
+                                <spam class="fag-item__text"
+                                    >What is your hourly rate?</spam
+                                >
+                            </label>
+                            <section class="fag-item__answer">
+                                <p class="fag-item__desc">
+                                    Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit. In urna, non nisl tincidunt
+                                    ut elementum turpis.
+                                </p>
+                            </section>
+                        </section>
+                    </section>
+                </div>
+            </section>
+
+            <!-- === Gallery ==== -->
+            <section class="gallery" style="display: none">
+                <div class="container">
+                    <!-- top -->
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="gallery__top">
+                                <h2 class="gallery__heading">My atmosphere</h2>
+                                <p class="gallery__desc">
+                                    Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit. In urna, non nisl tincidunt
+                                    ut elementum turpis.
+                                </p>
+                                <a href="#!" class="gallery__link"
+                                    >@interaction_arif</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                    <!-- list -->
+                    <div class="gallery__list">
+                        <div class="row">
+                            <!-- item 1 -->
+                            <div class="col-lg-4">
+                                <div class="gallery-item">
+                                    <img
+                                        src="./assets/img/gallery-01.png"
+                                        alt=""
+                                        class="gallery-item__img"
+                                    />
+                                </div>
+                            </div>
+
+                            <!-- item 2 -->
+                            <div class="col-lg-4">
+                                <div class="gallery-item">
+                                    <img
+                                        src="./assets/img/gallery-02.png"
+                                        alt=""
+                                        class="gallery-item__img"
+                                    />
+                                </div>
+                            </div>
+
+                            <!-- item 3 -->
+                            <div class="col-lg-4">
+                                <div class="gallery-item">
+                                    <img
+                                        src="./assets/img/gallery-03.png"
+                                        alt=""
+                                        class="gallery-item__img"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- === CTA ==== -->
+            <div class="cta" style="display: none">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="cta__inner">
+                                <img
+                                    src="./assets/img/cta-icon.png"
+                                    alt=""
+                                    class="cta__icon"
+                                />
+                                <h2 class="cta__heading">
+                                    Got a project? Let's talk
+                                </h2>
+                                <p class="cta__desc">
+                                    Lorem ipsum dolor, sit amet consectetur
+                                    adipisicing elit. Labore qui odio
+                                    consectetur incidunt est?
+                                </p>
+                                <a href="#!" class="btn cta__btn"
+                                    >Book a Call</a
+                                >
+
+                                <!-- positon -->
+                                <div class="cta__bottom">
+                                    <img
+                                        src="./assets/icon/hero-media-icon-1.svg"
+                                        alt=""
+                                        class="cta__rect"
+                                    />
+                                    <img
+                                        src="./assets/icon/hero-media-icon-2.svg"
+                                        alt=""
+                                        class="cta__rect"
+                                    />
+                                    <img
+                                        src="./assets/icon/hero-media-icon-3.svg"
+                                        alt=""
+                                        class="cta__rect"
+                                    />
+                                    <img
+                                        src="./assets/icon/hero-media-icon-4.svg"
+                                        alt=""
+                                        class="cta__rect"
+                                    />
+                                    <img
+                                        src="./assets/icon/hero-content-icon-1.svg"
+                                        alt=""
+                                        class="cta__rect"
+                                    />
+                                    <img
+                                        src="./assets/icon/hero-content-icon-2.svg"
+                                        alt=""
+                                        class="cta__rect"
+                                    />
+                                    <img
+                                        src="./assets/icon/hero-content-icon-3.svg"
+                                        alt=""
+                                        class="cta__rect"
+                                    />
+                                    <img
+                                        src="./assets/icon/hero-content-icon-4.svg"
+                                        alt=""
+                                        class="cta__rect"
+                                    />
+
+                                    <img
+                                        src="./assets/icon/cta-content-1.svg"
+                                        alt=""
+                                        class="cta__rect"
+                                    />
+                                    <img
+                                        src="./assets/icon/cta-content-2.svg"
+                                        alt=""
+                                        class="cta__rect"
+                                    />
+                                    <img
+                                        src="./assets/icon/cta-content-3.svg"
+                                        alt=""
+                                        class="cta__rect"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </main>
+
+        <!-- ==== FOOTER ==== -->
+        <footer class="footer" style="display: none">
+            <div class="footer-bottom">
+                <!-- email -->
+                <div class="footer__inner">
+                    <div class="footer__email">
+                        <a href="#!" class="footer__dots">
+                            <img
+                                src="./assets/icon/header-email.svg"
+                                alt=""
+                                class="footer__img"
+                            />
+                        </a>
+                        <a
+                            href="mailto:hi@arif.interactive"
+                            class="footer__link"
+                            >hi@arif.interactive</a
+                        >
+                    </div>
+                    <!-- logo -->
+                    <a class="footer__logo" href="#!">
+                        <img
+                            src="./assets/icon/avatar.svg"
+                            alt=""
+                            class="footer__avar"
+                        />
+                    </a>
+
+                    <!-- NAV  -->
+                    <nav class="navbarf">
+                        <section class="navbarf__list">
+                            <!-- navbar-item-1 -->
+                            <div class="navbarf-item">
+                                <a href="#projects" class="navbarf-item__link"
+                                    >Projects</a
+                                >
+                            </div>
+                            <!-- navbar-item-2 -->
+                            <div class="navbarf-item">
+                                <a href="#journey" class="navbarf-item__link"
+                                    >Journey</a
+                                >
+                            </div>
+                            <!-- navbar-item-3 -->
+                            <div class="navbarf-item">
+                                <a href="#service" class="navbarf-item__link"
+                                    >Service</a
+                                >
+                            </div>
+                            <!-- navbar-item-4 -->
+                            <div class="navbarf-item">
+                                <a href="#contact" class="navbarf-item__link"
+                                    >Contact</a
+                                >
+                            </div>
+                        </section>
+                    </nav>
+                </div>
+            </div>
+        </footer>
+
+        <!-- ==== COPYRIGHT ==== -->
+        <div class="copyright" hidden>
+            <div class="container">
+                <div class="copy__inner">
+                    <p class="copy__desc">
+                        ©interactiveArif 2021. All rights reserved.
+                    </p>
+                    <div class="copy__info">
+                        <span class="copy__policy"> Privacy Policy </span>
+                        <span class="copy__term">Terms of Conditions</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

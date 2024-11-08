@@ -1,5 +1,15 @@
 /* pc */
 @media screen and (min-width: 992px) {
+    .mobile-header {
+        display: none;
+    }
+
+    .toggle-menu {
+        display: none;
+    }
+    .show-on-mobile {
+        display: none;
+    }
 }
 
 /*========= tablet & mobile ===========*/
@@ -7,12 +17,177 @@
     .container {
         max-width: calc(100% - 25px);
     }
+
+    .header__inner {
+        border-bottom: 1.5px solid #d6d3e2;
+    }
+
+    .header__link {
+        display: none;
+    }
+
+    .header .navbar {
+        display: none;
+    }
+
+    .header__email {
+        order: 2;
+    }
+
+    .header .toggle-menu__box {
+        position: absolute;
+        display: flex;
+        line-height: 46px;
+        justify-content: center;
+        width: 46px;
+        height: 46px;
+        border-radius: 32px;
+        border: 1px solid rgba(220, 212, 252, 1);
+        /* right: 25px; */
+        bottom: 39px;
+    }
+
+    .header .toggle-menu svg {
+        width: 24px;
+        color: #ccc;
+        /* position: absolute; */
+        text-align: center;
+    }
+
+    .header-top {
+        position: relative;
+    }
+
+    .menu-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.3);
+        z-index: 3;
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.5s ease;
+    }
+
+    .menu-drawer {
+        position: fixed;
+        /* trên 0,phải 40% ,dưới 0 , trái 0 , */
+        inset: 0 0 0 40%;
+        background: #fff;
+        z-index: 4;
+        transform: translateX(100%);
+        transition: 0.5s ease;
+        padding: 60px;
+    }
+
+    .menu-drawer a {
+        display: block;
+        text-align: center;
+        padding: 14px 0;
+        font-weight: 500;
+    }
+
+    .menu-drawer .navbar__list {
+        margin-top: 35px;
+        flex-direction: column;
+        row-gap: 30px;
+        text-align: center;
+    }
+
+    .menu-checkbox:checked ~ .menu-overlay {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .menu-checkbox:checked ~ .menu-drawer {
+        transform: translateX(0);
+    }
+
+    /* footer xíu xóa đoạn này */
+    .footer {
+        display: none;
+    }
+
+    /* thanh  */
+    .separate {
+        border-top: 1.5px solid #d6d3e2;
+    }
+    /* ========= HERO ======= */
+    .hero .row {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .hero-round {
+        display: none;
+    }
+
+    .hero__left:nth-child(1) {
+        top: 20px;
+        left: 200px;
+    }
+
+    .hero__left:nth-child(2) {
+        left: -30px;
+        top: 190px;
+    }
+
+    .hero__left:nth-child(4) {
+        right: 40px;
+        top: 120px;
+    }
+
+    /* ========= TRUST ======= */
+
+    .trust__social {
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        justify-content: center;
+    }
+
+    .trust__heading {
+        width: 69%;
+        margin-bottom: 42px;
+        text-align: center;
+    }
+
+    .trust__heading::before {
+        top: -15%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 }
 
 /*========================== tablet ======================*/
 @media screen and (min-width: 768px) and (max-width: 991px) {
+    .hide-on-tablet {
+        display: none;
+    }
+
+    .menu-drawer__close {
+        display: none;
+    }
+
+    .header .toggle-menu__box {
+        right: 55px;
+    }
+
+    /* .show-on-mobile {
+        display: none;
+    } */
 }
 
 /*=================== mobile ================================*/
 @media screen and (max-width: 767px) {
+    .menu-drawer {
+        padding: 10px;
+        inset: 0;
+    }
+
+    .menu-drawer__close {
+        width: 30px;
+    }
+
+    .header .toggle-menu__box {
+        right: -10px;
+    }
 }
